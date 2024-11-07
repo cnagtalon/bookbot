@@ -1,9 +1,13 @@
 def main():
-    with open("books/frankenstein.txt") as f:
+    
+    chosen_book = (input("What book do you want to read?"))
+    chosen_book_as_file = chosen_book.lower()  + ".txt"
+    print(f"You chose the book : {chosen_book}")
+    with open(f"books/{chosen_book_as_file}") as f:
 
         #print the report header
         print("--- Begin Report ---")
-        
+    
         #turns the contents of the file into a string
         file_contents = f.read()
 
@@ -13,6 +17,8 @@ def main():
         #counts the words
         word_count = len(file_contents.split())
         print(f"There are {word_count} words in this book")
+
+        print("--------------------")
 
         #counts the characters
         def count_letter(text):
